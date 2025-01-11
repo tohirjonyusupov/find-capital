@@ -2,7 +2,7 @@ let countries = [];
 let currentQuestion = 0;
 let score = 0;
 let newPlayer = "";
-let players = JSON.parse(localStorage.getItem("players"));
+let players = JSON.parse(localStorage.getItem("players")) || {};
 let timer;
 let timeLeft = 15;
 
@@ -123,12 +123,17 @@ function endGame() {
   document.getElementById("game").style.display = "none";
   document.getElementById("results").style.display = "block";
 
-  if (score > players[newPlayer]) {
+  if (!players) {
     players[newPlayer] = score;
     localStorage.setItem("players", JSON.stringify(players));
   }
 
   if (!Object.keys(players).includes(newPlayer)) {
+    players[newPlayer] = score;
+    localStorage.setItem("players", JSON.stringify(players));
+  }
+
+  if (score > players[newPlayer]) {
     players[newPlayer] = score;
     localStorage.setItem("players", JSON.stringify(players));
   }
