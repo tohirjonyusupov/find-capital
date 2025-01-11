@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Country Quiz</title>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="./icon.webp">
+</head>
+
+<body>
+    <div id="intro" class="intro">
+        <h1>Poytaxtni top o'yini</h1>
+        <input placeholder="Ismingizni kiriting..." class="input-style" type="text" id="newPlayer">
+
+        <div class="error">
+            <div class="error__title">Ismingizni kiriting</div>
+        </div>
+        <button id="start-btn" class="btn">O'yinni boshlash</button>
+    </div>
+
+    <div id="game" class="game">
+        <h2>Assalomu aleykum, <span id="username" class="username"></span>!</h2>
+        <p id="timer" class="timer"></p>
+        <img id="flag" class="flag" alt="flag">
+        <p id="countryName" class="countryName"></p>
+        <div id="answers"></div>
+        <div id="score" class="score"></div>
+        <div id="currentQuestion" class="currentQuestion"></div>
+    </div>
+
+    <div id="results">
+        <h1>O'yin yakunlandi!</h1>
+        <p id="finalMessage" class="finalMessage"></p>
+        <button id="reset" class="btn">Qayta o'ynash</button>
+        <button id="exit" class="btn">O'yindan chiqish</button>
+        <button id="showLeaderboard" class="btn">Faollar jadvali</button>
+    </div>
+
+    <div id="leaderboard" style="display: none;">
+        <h1>Faollar jadvali</h1>
+        <div id="leaderboardLists"></div>
+        <button id="hideLeaderboard" class="btn">Chiqish</button>
+    </div>
+</body>
+
+</html>
