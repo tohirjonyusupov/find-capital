@@ -89,7 +89,12 @@ function resetTimer() {
     document.getElementById("timer").textContent = `${timeLeft}s`;
     if (timeLeft === 0) {
       clearInterval(timer);
-      displayQuestion();
+      document.querySelectorAll(".answer-btn").forEach((btn) => {
+        if (btn.textContent === correctCapital) {
+          btn.classList.add("correct");
+        }
+        setTimeout(displayQuestion, 2000);
+      });
     }
   }, 1000);
 }
