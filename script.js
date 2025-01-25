@@ -76,11 +76,11 @@ function displayQuestion() {
     document.getElementById("answers").appendChild(button);
   });
 
-  resetTimer();
+  resetTimer(correctCapital);
 }
 
 // Timerni boshidan boshlash
-function resetTimer() {
+function resetTimer(correctAnswer) {
   clearInterval(timer);
   timeLeft = 15;
   document.getElementById("timer").textContent = `${timeLeft}s`;
@@ -90,7 +90,7 @@ function resetTimer() {
     if (timeLeft === 0) {
       clearInterval(timer);
       document.querySelectorAll(".answer-btn").forEach((btn) => {
-        if (btn.textContent === correctCapital) {
+        if (btn.textContent === correctAnswer) {
           btn.classList.add("correct");
         }
         setTimeout(displayQuestion, 2000);
